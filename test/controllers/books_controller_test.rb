@@ -18,30 +18,30 @@ class BooksControllerTest < ActionController::TestCase
 
   test "should create book" do
     assert_difference('Book.count') do
-      post :create, book: { name: @book.name }
+      post :create, params: { book: { name: @book.name } }
     end
 
     assert_redirected_to book_path(assigns(:book))
   end
 
   test "should show book" do
-    get :show, id: @book
+    get :show, params: { id: @book }
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @book
+    get :edit, params: { id: @book }
     assert_response :success
   end
 
   test "should update book" do
-    patch :update, id: @book, book: { name: @book.name }
+    patch :update, params: { id: @book , book: { name: @book.name } }
     assert_redirected_to book_path(assigns(:book))
   end
 
   test "should destroy book" do
     assert_difference('Book.count', -1) do
-      delete :destroy, id: @book
+      delete :destroy, params: { id: @book }
     end
 
     assert_redirected_to books_path

@@ -46,3 +46,4 @@ group :development do
   gem 'listen'
 end
 
+gem 'rails-controller-testing'
